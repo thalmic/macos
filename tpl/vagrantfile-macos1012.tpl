@@ -4,7 +4,8 @@
 Vagrant.configure("2") do |config|
     config.vm.define "vagrant-macos1012"
     config.vm.box = "macos1012"
- 
+    config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__chown: false
+
     ["vmware_fusion", "vmware_workstation"].each do |provider|
         config.vm.provider provider do |v, override|
             v.gui = true

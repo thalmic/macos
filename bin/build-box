@@ -30,8 +30,7 @@ args() {
 
   macos_installer="$2"
   if [ ! -d "${macos_installer}" ]; then
-    echo nope
-    # echo "$(basename $0): macOS installer "${macos_installer}" not found"
+    echo "$(basename $0): macOS installer "${macos_installer}" not found"
     exit 128
   fi
 
