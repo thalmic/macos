@@ -115,6 +115,8 @@
         "SSH_USERNAME={{ user `ssh_username` }}",
         "SSH_PASSWORD={{ user `ssh_password` }}"
       ],
+      "pause_before": "30s",
+      "expect_disconnect": "true",
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E -S bash '{{ .Path }}'",
       "scripts": [
         "script/vagrant.sh",
@@ -124,8 +126,6 @@
         "script/add-network-interface-detection.sh",
         "script/energy.sh",
         "script/autologin.sh",
-        "script/update.sh",
-        "script/update.sh",
         "script/update.sh",
         "script/update.sh"
       ],
